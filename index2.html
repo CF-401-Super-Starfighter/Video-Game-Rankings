@@ -1,0 +1,335 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Favorite Video Games</title>
+
+<style>
+:root {
+  --page-bg: #f4f2ed;
+  --ink: #202321;
+  --muted: #686d68;
+  --accent: #8b9b83;
+  --line: #deded6;
+  --content-width: 1120px;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--page-bg);
+  color: var(--ink);
+  font-family: Inter, system-ui, sans-serif;
+  line-height: 1.65;
+}
+
+.page-shell {
+  width: min(var(--content-width), calc(100% - 48px));
+  margin: auto;
+}
+
+.intro {
+  max-width: 820px;
+  padding: clamp(76px, 12vw, 150px) 0 76px;
+}
+
+.eyebrow {
+  margin-bottom: 18px;
+  color: var(--accent);
+  font-size: .76rem;
+  font-weight: 750;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+}
+
+h1, h2, p { margin-top: 0; }
+
+h1 {
+  max-width: 780px;
+  margin-bottom: 20px;
+  font-size: clamp(2.7rem, 7vw, 5.8rem);
+  line-height: .99;
+  letter-spacing: -.065em;
+}
+
+.intro-copy {
+  max-width: 650px;
+  color: var(--muted);
+  font-size: clamp(1.05rem, 2vw, 1.25rem);
+}
+
+.sections {
+  display: grid;
+  gap: clamp(64px, 10vw, 132px);
+  padding: 8px 0 120px;
+}
+
+.feature {
+  display: grid;
+  grid-template-columns: minmax(0, 1.12fr) minmax(280px, .88fr);
+  grid-template-areas:
+    "heading heading"
+    "image copy";
+  column-gap: clamp(28px, 6vw, 84px);
+  row-gap: 22px;
+  align-items: center;
+}
+
+.feature-heading {
+  grid-area: heading;
+  width: min(75%, 680px);
+  margin-left: 7%;
+}
+
+.feature:nth-child(even) .feature-heading {
+  margin-left: auto;
+  margin-right: 7%;
+  text-align: right;
+}
+
+.feature-number {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--accent);
+  font-size: .78rem;
+  font-weight: 750;
+  letter-spacing: .16em;
+}
+
+h2 {
+  margin-bottom: 0;
+  font-size: clamp(2rem, 4.3vw, 3.5rem);
+  line-height: 1.04;
+  letter-spacing: -.05em;
+}
+
+.feature-image {
+  grid-area: image;
+  display: block;
+  width: 100%;
+  height: clamp(280px, 42vw, 510px);
+  object-fit: cover;
+  background: #d9ddd5;
+}
+
+.feature-copy {
+  grid-area: copy;
+  max-width: 430px;
+  padding: 12px 0;
+}
+
+.feature-copy p {
+  margin-bottom: 0;
+  color: var(--muted);
+  font-size: 1.02rem;
+}
+
+.feature:nth-child(even) {
+  grid-template-columns: minmax(280px, .88fr) minmax(0, 1.12fr);
+  grid-template-areas:
+    "heading heading"
+    "copy image";
+}
+
+.feature:nth-child(even) .feature-copy {
+  justify-self: end;
+}
+
+.feature:nth-child(even) .feature-image {
+  justify-self: end;
+}
+
+footer {
+  padding: 28px 0 42px;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  font-size: .88rem;
+}
+
+@media (max-width: 720px) {
+  .page-shell {
+    width: min(100% - 32px, 560px);
+  }
+
+  .intro { padding: 76px 0 56px; }
+
+  .sections {
+    gap: 76px;
+    padding-bottom: 80px;
+  }
+
+  .feature,
+  .feature:nth-child(even) {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "heading"
+      "image"
+      "copy";
+    row-gap: 18px;
+  }
+
+  .feature-heading,
+  .feature:nth-child(even) .feature-heading {
+    width: 92%;
+    margin: 0 0 0 4%;
+    text-align: left;
+  }
+
+  .feature-image {
+    height: clamp(250px, 68vw, 420px);
+  }
+
+  .feature-copy,
+  .feature:nth-child(even) .feature-copy {
+    justify-self: start;
+    max-width: none;
+    padding: 0 4%;
+  }
+}
+</style>
+</head>
+
+<body>
+<main>
+
+<header class="page-shell intro">
+  <p class="eyebrow">My Video Game Collection</p>
+  <h1>Worlds Worth Getting Lost In.</h1>
+  <p class="intro-copy">
+    Six games, six different experiences. From building entire worlds
+    and exploring futuristic cities to surviving terrifying encounters
+    and questioning the meaning of existence.
+  </p>
+</header>
+
+<div class="page-shell sections">
+
+  <!-- 01 MINECRAFT -->
+  <section class="feature">
+    <div class="feature-heading">
+      <span class="feature-number">01 / SANDBOX</span>
+      <h2>Minecraft</h2>
+    </div>
+    <img class="feature-image"
+      src="https://imgix.bustle.com/uploads/image/2024/5/30/b3f54ac4/minecraft.jpeg?w=1200&h=1200&fit=crop&crop=faces&fm=jpg"
+      alt="Minecraft">
+    <div class="feature-copy">
+      <p>
+        A limitless sandbox where creativity and adventure come together.
+        Explore randomly generated worlds, build incredible structures,
+        gather resources, and survive against the dangers of the night.
+        Minecraft makes every adventure your own.
+      </p>
+    </div>
+  </section>
+
+  <!-- 02 ALTER EGO -->
+  <section class="feature">
+    <div class="feature-heading">
+      <span class="feature-number">02 / PSYCHOLOGICAL</span>
+      <h2>ALTER EGO</h2>
+    </div>
+    <div class="feature-copy">
+      <p>
+        Created by Caramel Column, ALTER EGO is a psychological
+        exploration game centered around self-discovery.
+        Through conversations, introspection, and personality tests,
+        you explore the depths of your identity and uncover a mysterious story.
+      </p>
+    </div>
+    <img class="feature-image"
+      src="https://assets-prd.ignimgs.com/2024/07/19/untitled-1-1721402077032.png"
+      alt="ALTER EGO">
+  </section>
+
+  <!-- 03 CYBERPUNK 2077 -->
+  <section class="feature">
+    <div class="feature-heading">
+      <span class="feature-number">03 / OPEN WORLD RPG</span>
+      <h2>Cyberpunk 2077</h2>
+    </div>
+    <img class="feature-image"
+      src="https://image.api.playstation.com/vulcan/ap/rnd/202111/3013/cKZ4tKNFj9C00giTzYtH8PF1.png"
+      alt="Cyberpunk 2077">
+    <div class="feature-copy">
+      <p>
+        Welcome to Night City, a futuristic metropolis filled with
+        technology, corruption, and ambition. Play as V, a mercenary
+        searching for immortality in a world where humanity and
+        machinery are increasingly intertwined.
+      </p>
+    </div>
+  </section>
+
+  <!-- 04 SUBNAUTICA -->
+  <section class="feature">
+    <div class="feature-heading">
+      <span class="feature-number">04 / SURVIVAL ADVENTURE</span>
+      <h2>Subnautica</h2>
+    </div>
+    <div class="feature-copy">
+      <p>
+        Stranded on an alien ocean planet, explore the depths,
+        collect resources, craft equipment, and uncover secrets
+        hidden beneath the waves. A beautiful yet terrifying
+        underwater world awaits.
+      </p>
+    </div>
+    <img class="feature-image"
+      src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ0jkoROfaa1jBo1QAti-DIxPEBt5nl9_XtrDhlJEP88_1aYB584DZ5zY5d&s=10"
+      alt="Subnautica">
+  </section>
+
+  <!-- 05 LETHAL COMPANY -->
+  <section class="feature">
+    <div class="feature-heading">
+      <span class="feature-number">05 / CO-OP HORROR</span>
+      <h2>Lethal Company</h2>
+    </div>
+    <img class="feature-image"
+      src="https://static0.gamerantimages.com/wordpress/wp-content/uploads/2023/11/lethal-company-steams-top-rated-game-2023-game-rant.jpg?w=1600&h=900&fit=crop"
+      alt="Lethal Company">
+    <div class="feature-copy">
+      <p>
+        Work for the Company by scavenging abandoned moons for scrap
+        while trying to meet your profit quota. Teamwork is essential,
+        but dangerous creatures and unpredictable encounters can turn
+        even the simplest expedition into complete chaos.
+      </p>
+    </div>
+  </section>
+
+  <!-- 06 SOMA -->
+  <section class="feature">
+    <div class="feature-heading">
+      <span class="feature-number">06 / SCI-FI HORROR</span>
+      <h2>SOMA</h2>
+    </div>
+    <div class="feature-copy">
+      <p>
+        Deep beneath the ocean, in an isolated research facility,
+        something has gone terribly wrong. Explore an unsettling
+        underwater world while uncovering a story about consciousness,
+        identity, artificial intelligence, and what it truly means
+        to be human.
+      </p>
+    </div>
+    <img class="feature-image"
+      src="https://i1.sndcdn.com/artworks-000526308540-vr3pt8-t1080x1080.jpg"
+      alt="SOMA">
+  </section>
+
+</div>
+</main>
+
+<footer class="page-shell">
+  <p>A collection of six of my favorite video games.</p>
+</footer>
+
+</body>
+</html>
